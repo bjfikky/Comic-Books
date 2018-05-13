@@ -45,3 +45,4 @@ comicbook/
 - Web Storm (IDE by JetBrains)
 - Windows 10 PC
 - Google Chrome
+- Git and GitHub
