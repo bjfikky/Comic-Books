@@ -1,7 +1,7 @@
 # Welcome to Comic Books!
 
 Hi!  **Comic Books** was created using React-Redux. It is basically an app that shows a list of comic books and allows you to read them.
-> This app is not meant for commercial purposes. It is only meant to work on and showcase my React JS knowledge.
+> This app is not meant for commercial purposes. It is only used to work on and showcase my React JS knowledge.
 
 
 

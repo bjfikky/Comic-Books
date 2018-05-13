@@ -4,6 +4,7 @@ import './App.css';
 
 import BookList from './containers/book-list';
 import Navbar from './components/navbar'
+import SelectedBook from './components/selected-book'
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
@@ -12,8 +13,11 @@ class App extends Component {
         return (
             <div>
                 <Navbar/>
-                <div className=" App container">
-                    <BookList/>
+                <div className="App container">
+                    <div className="row">
+                        <BookList/>
+                        <SelectedBook/>
+                    </div>
                 </div>
             </div>
         );

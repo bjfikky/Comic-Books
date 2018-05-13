@@ -1,4 +1,4 @@
-export default function () {
+const comicbooks = () => {
     return [
         {title: 'Astonishing X-men'},
         {title: 'Justice League of America'},
@@ -18,3 +18,5 @@ export default function () {
         {title: 'Fantastic Four'},
     ]
 }
+
+export default comicbooks;
