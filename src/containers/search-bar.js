@@ -1,26 +1,21 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
 
 class SearchBar extends Component {
     render() {
-        
+        console.log("nothing makes sense!");
         return (
             <div className="search-form">
-                <form className="input-group">
-                    <input className="form-control" value={this.props.searchTerm.term} />
-                    <span className="input-group-append"><button type="submit" className="btn btn-outline-secondary">Search</button></span>
+                <form className="form-group">
+                    <input className="form-control" onChange={this.searchBooks} placeholder="Search ..." />
                 </form>
             </div>
         );
     }
+    
+    searchBooks() {
+    
+    }
 }
 
-function mapStateToProps(state) {
-    return {
-        searchTerm: state.searchTerm
-    };
-}
 
-export default connect(
-    mapStateToProps,
-)(SearchBar);
+export default SearchBar;

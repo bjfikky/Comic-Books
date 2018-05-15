@@ -1,3 +1,4 @@
+
 const selectBook = (book) => {
     return {
         type: 'BOOK_SELECTED',
@@ -5,10 +6,6 @@ const selectBook = (book) => {
     };
 }
 
-const searchBooks = (term) => {
-    return {
-    
-    }
-}
 
-export {selectBook, searchBooks};
+
+export default selectBook;
