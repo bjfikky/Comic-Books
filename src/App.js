@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import BookList from './containers/book-list';
+import SearchBar from './containers/search-bar';
 import Navbar from './components/navbar'
 import SelectedBook from './containers/selected-book'
 
@@ -14,6 +15,7 @@ class App extends Component {
             <div>
                 <Navbar/>
                 <div className="App container">
+                    <SearchBar/>
                     <div className="row">
                         <BookList/>
                         <SelectedBook/>
