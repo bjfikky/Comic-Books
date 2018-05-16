@@ -6,6 +6,12 @@ const selectBook = (book) => {
     };
 }
 
+const searchBooks = (event, term) => {
+    event.preventDefault();
+    return {
+        type: 'BOOKS_SEARCHED',
+        payload: term
+    }
+}
 
-
-export default selectBook;
+export  {selectBook, searchBooks};
