@@ -12,7 +12,7 @@ class SearchBar extends Component {
     render() {
         return (
             <div className="search-form">
-                <form className="input-group" onSubmit={(event) => this.props.searchBook(event, this.state.term)}>
+                <form className="input-group" onSubmit={this.onFormSubmit}>
                     <input className="form-control" onChange={this.onInputChange}  placeholder="Search ..." value={this.state.term} />
                     <span className="input-group-append"><button className="btn btn-outline-secondary">Search</button></span>
                 </form>
@@ -24,6 +24,11 @@ class SearchBar extends Component {
         this.setState(
             { term: event.target.value }
         );
+    }
+    
+    onFormSubmit = (event) => {
+        event.preventDefault();
+        this.props.searchBook(this.state.term);
     }
     
     

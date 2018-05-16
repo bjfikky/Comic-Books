@@ -6,8 +6,7 @@ const selectBook = (book) => {
     };
 }
 
-const searchBooks = (event, term) => {
-    event.preventDefault();
+const searchBooks = (term) => {
     return {
         type: 'BOOKS_SEARCHED',
         payload: term

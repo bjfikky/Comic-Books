@@ -6,7 +6,11 @@ import {selectBook} from '../actions/index';
 
 class BookList extends Component {
     render() {
-       
+        
+        if (this.props.books.length === 0) {
+            return (<h3 className="text-warning">No results found! </h3>);
+        }
+        
         return (
             <div className="col-md-4">
                 <div className="list-group">
