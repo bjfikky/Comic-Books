@@ -35,14 +35,14 @@ const mapStateToProps = (state) => {
     };
 }
 
-const matchDispatchToProps = (dispatch) => {
-    return bindActionCreators({
-        selectBook: selectBook
-    }, dispatch);
-}
+// const matchDispatchToProps = (dispatch) => {
+//     return bindActionCreators({
+//         selectBook: selectBook
+//     }, dispatch);
+// }
 
 
 export default connect(
     mapStateToProps,
-    matchDispatchToProps,
+    {selectBook},
 )(BookList);
