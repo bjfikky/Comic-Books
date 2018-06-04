@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import './App.css';
 
@@ -14,16 +15,43 @@ class App extends Component {
         return (
             <div>
                 <Navbar/>
-                <div className="App container">
-                    <SearchBar/>
-                    <div className="row">
-                        <BookList/>
-                        <SelectedBook/>
+                <BrowserRouter>
+                    <div className="App container">
+                        <Switch>
+                            <Route path="/read" component={Read}/>
+                            <Route path="/" component={BooksPage}/>
+                        </Switch>
                     </div>
-                </div>
+                </BrowserRouter>
             </div>
         );
     }
 }
+
+
+
+const BooksPage = () => {
+    return (
+        <div>
+            <SearchBar/>
+            <div className="row">
+                <BookList/>
+                <SelectedBook/>
+            </div>
+        </div>
+    );
+};
+
+
+const Read = () => {
+    return (
+        <div>
+            <h1>Read</h1>
+        </div>
+    );
+};
+
+
+
 
 export default App;

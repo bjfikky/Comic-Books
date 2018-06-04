@@ -2,26 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdcada68-0073-4910-baf5-70d7e20d602c" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/amazingspiderman.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/batman.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/blackpanther.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/captainamerica.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/fantasticfour.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/greenlantern.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/hulk.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/ironman.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/justiceleague.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/newavengers.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/punisher.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/superman.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/thanos.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/tmnt.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/wolverine.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/xmen.jpg" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/containers/book-list.js" afterPath="$PROJECT_DIR$/src/containers/book-list.js" />
-      <change beforePath="$PROJECT_DIR$/src/containers/selected-book.js" afterPath="$PROJECT_DIR$/src/containers/selected-book.js" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/reducer_books.js" afterPath="$PROJECT_DIR$/src/reducers/reducer_books.js" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,14 +19,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+            <state relative-caret-position="357">
+              <caret line="21" column="67" lean-forward="false" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -71,17 +65,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/actions/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reducer_books.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="reducer_books.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reducers/reducer_books.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
@@ -164,7 +148,6 @@
         <option value="$PROJECT_DIR$/src/components/selected-book.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/containers/searchBar.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/reducers/reducer_search-term.js" />
         <option value="$PROJECT_DIR$/src/reducers/index.js" />
@@ -174,6 +157,8 @@
         <option value="$PROJECT_DIR$/src/containers/book-list.js" />
         <option value="$PROJECT_DIR$/src/containers/selected-book.js" />
         <option value="$PROJECT_DIR$/src/reducers/reducer_books.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/App.js" />
       </list>
     </option>
   </component>
@@ -220,12 +205,6 @@
               <item name="comicbook" type="b2602c69:ProjectViewProjectNode" />
               <item name="comicbook" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="comicbook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="comicbook" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="comicbook" type="b2602c69:ProjectViewProjectNode" />
@@ -320,7 +299,7 @@
       <workItem from="1526163811311" duration="1020000" />
       <workItem from="1526164946897" duration="540000" />
       <workItem from="1526165674531" duration="46672000" />
-      <workItem from="1527885589863" duration="3110000" />
+      <workItem from="1527885589863" duration="5190000" />
     </task>
     <task id="LOCAL-00001" summary="Added selected book component template">
       <created>1526190767472</created>
@@ -333,7 +312,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51342000" />
+    <option name="totallyTimeSpent" value="53422000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1278" height="1413" extended-state="0" />
@@ -550,14 +529,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -625,24 +596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -695,6 +648,32 @@
         <state relative-caret-position="306">
           <caret line="18" column="70" lean-forward="false" selection-start-line="18" selection-start-column="70" selection-end-line="18" selection-end-column="70" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="67" lean-forward="false" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
