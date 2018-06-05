@@ -1,4 +1,13 @@
 
+import firebase from 'firebase';
+
+export const getBooks = () => {
+    return {
+        type: 'BOOK_SELECTED',
+        payload: null
+    };
+}
+
 export const selectBook = (book) => {
     return {
         type: 'BOOK_SELECTED',
