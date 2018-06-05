@@ -48,3 +48,15 @@
     margin: auto;
     padding-bottom: 30px;
 }
+
+.add-book {
+    margin-bottom: 15px;
+}
+
+.add-new-form hr {
+    margin-bottom: 30px;
+}
+
+.cancel-button {
+    margin-left: 40px;
+}

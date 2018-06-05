@@ -1,18 +1,19 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import {Link} from 'react-router-dom'
 
 import {selectBook} from '../actions/index';
 
 class BookList extends Component {
     render() {
-        
         if (this.props.books.length === 0) {
             return (<h3 className="text-warning">No results found! </h3>);
         }
         
         return (
             <div className="col-md-4">
+                <Link to="/add" className="btn btn-outline-success add-book">Add Book</Link>
                 <div className="list-group">
                     {this.renderList()}
                 </div>

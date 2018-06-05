@@ -1,16 +1,23 @@
 
-const selectBook = (book) => {
+export const selectBook = (book) => {
     return {
         type: 'BOOK_SELECTED',
         payload: book
     };
 }
 
-const searchBooks = (term) => {
+export const searchBooks = (term) => {
     return {
         type: 'BOOKS_SEARCHED',
         payload: term
     }
 }
 
-export  {selectBook, searchBooks};
+export const addBook = (values) => {
+    console.log("Add book");
+    return {
+        type: 'ADD_BOOK',
+        payload: values
+    }
+}
+

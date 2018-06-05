@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {searchBooks} from '../actions';
-import {bindActionCreators} from 'redux';
+
 
 class SearchBar extends Component {
     constructor(props) {
@@ -24,30 +24,21 @@ class SearchBar extends Component {
         this.setState(
             { term: event.target.value }
         );
+        
+        if (event.target.value === "") {
+            this.props.searchBooks("");
+        }
     }
     
     onFormSubmit = (event) => {
         event.preventDefault();
-        this.props.searchBook(this.state.term);
+        this.props.searchBooks(this.state.term);
     }
     
-    
-}
-
-const mapStateToProps = (state) => {
-    return {
-        books: state.books,
-    };
-}
-
-const matchDispatchToProps = (dispatch) => {
-    return bindActionCreators({
-        searchBook: searchBooks
-    }, dispatch);
 }
 
 
 export default connect(
-    mapStateToProps,
-    matchDispatchToProps,
+    null,
+    {searchBooks},
 )(SearchBar);
