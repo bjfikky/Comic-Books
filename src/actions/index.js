@@ -33,10 +33,19 @@ export const searchBooks = (term) => {
 }
 
 export const addBook = (values) => {
+    
+    var booksRef = firebase.database().ref().child('books');
+    
+    let addbook = booksRef.push().set({
+        title: 'Punisher',
+        cover: 'images/punisher.jpg'
+    });
+    
     console.log("Add book");
+    
     return {
         type: 'ADD_BOOK',
-        payload: values
+        payload: addbook
     }
 }
 

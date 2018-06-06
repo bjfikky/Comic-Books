@@ -9,6 +9,15 @@ class BookList extends Component {
     componentWillMount() {
         this.props.getBooks();
     }
+    
+    renderList = () => {
+        return this.props.books.map((book) => {
+            return (
+                <button key={book.id} className="list-group-item list-group-item-action" onClick={() => this.props.selectBook(book)}>{book.title}</button>
+            );
+        });
+    }
+    
     render() {
         if (this.props.books.length === 0) {
             return (<h3 className="text-warning">No results found! </h3>);
@@ -24,13 +33,7 @@ class BookList extends Component {
         );
     }
     
-    renderList = () => {
-        return this.props.books.map((book) => {
-            return (
-                <button key={book.id} className="list-group-item list-group-item-action" onClick={() => this.props.selectBook(book)}>{book.title}</button>
-            );
-        });
-    }
+    
 }
 
 const mapStateToProps = (state) => {
