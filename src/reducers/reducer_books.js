@@ -6,18 +6,18 @@ const comicbooks = (state=[] , action) => {
     
     switch (action.type) {
         case 'GET_BOOKS':
-            var results = action.payload;
-    
-            for (var i = 0; i < results.length; i++) {
-                var object = results[i];
-                console.log(object.id + ' - ' + object.get('title'));
-                
-                books.push({
-                    id: object.id,
-                    title: object.get("title"),
-                    cover: object.get("cover")
-                })
-            }
+            console.log("from reducer", action.payload);
+            
+            var snap = action.payload;
+            
+           snap.forEach( function(childSnap){
+               books.push({
+                   id: childSnap.key,
+                   title: childSnap.val().title,
+                   cover: childSnap.val().cover
+               });
+               console.log(childSnap.val().title);
+           });
             
             return books;
         

@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import firebase from 'firebase';
 
 import './App.css';
+import config from './config/config';
 
 import BookList from './containers/book-list';
 import SearchBar from './containers/search-bar';
@@ -12,6 +14,9 @@ import SelectedBook from './containers/selected-book'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
+    componentWillMount() {
+        firebase.initializeApp(config);
+    }
     render() {
         return (
             <div>

@@ -1,22 +1,20 @@
 import Parse from 'parse';
 
-import CONFIG from '../config/config';
+import firebase from 'firebase';
 
-Parse.initialize(CONFIG.api_id);
-Parse.serverURL = CONFIG.url;
+
 
 
 
 export const getBooks = () => {
     
-    var test = Parse.Object.extend("ComicBooks");
-    var query = new Parse.Query(test);
+    var booksRef = firebase.database().ref().child('books');
     
-    var request = query.find();
+    let books = booksRef.ref.once('value');
     
     return {
         type: 'GET_BOOKS',
-        payload: request
+        payload: books
     };
 }
 
