@@ -3,9 +3,12 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {Link} from 'react-router-dom'
 
-import {selectBook} from '../actions/index';
+import {selectBook, getBooks} from '../actions/index';
 
 class BookList extends Component {
+    componentWillMount() {
+        this.props.getBooks();
+    }
     render() {
         if (this.props.books.length === 0) {
             return (<h3 className="text-warning">No results found! </h3>);
@@ -36,14 +39,15 @@ const mapStateToProps = (state) => {
     };
 }
 
-// const matchDispatchToProps = (dispatch) => {
-//     return bindActionCreators({
-//         selectBook: selectBook
-//     }, dispatch);
-// }
+const matchDispatchToProps = (dispatch) => {
+    return bindActionCreators({
+        selectBook: selectBook,
+        getBooks : getBooks
+    }, dispatch);
+}
 
 
 export default connect(
     mapStateToProps,
-    {selectBook},
+    matchDispatchToProps,
 )(BookList);

@@ -8,4 +8,4 @@ const DB_CONFIG = {
     messagingSenderId: "870818763570"
 };
 
-export  default DB_CONFIG;
+export default DB_CONFIG;
