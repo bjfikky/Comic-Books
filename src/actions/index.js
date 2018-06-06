@@ -1,52 +1,23 @@
-
-import firebase from 'firebase';
-import DB_CONFIG from '../config/config';
-
 import Parse from 'parse';
 
-Parse.initialize("benjaminorimoloye");
-Parse.serverURL = 'http://comic-book-benjamin.herokuapp.com/parse'
+import CONFIG from '../config/config';
 
-const app = firebase.initializeApp(DB_CONFIG);
-const database = app.database().ref();
+Parse.initialize(CONFIG.api_id);
+Parse.serverURL = CONFIG.url;
+
+
 
 export const getBooks = () => {
-    let books = [];
     
     var test = Parse.Object.extend("ComicBooks");
     var query = new Parse.Query(test);
     
-    query.find({
-        success: function(results) {
-            console.log("Successfully retrieved " + results.length + " books.");
-            // Do something with the returned Parse.Object values
-            for (var i = 0; i < results.length; i++) {
-                var object = results[i];
-                console.log(object.get('title'));
-            }
-            return {
-                type: 'GET_BOOKS',
-                payload: books
-            };
-        },
-        error: function(error) {
-            alert("Error: " + error.code + " " + error.message);
-        }
-    });
+    var request = query.find();
     
-    
-    // database.once('child_added', snapshot => {
-    //     books.push({
-    //         id: snapshot.key,
-    //         title: snapshot.val().title,
-    //         cover: snapshot.val().cover
-    //     });
-    //     console.log(snapshot.val().title);
-    //         return {
-    //             type: 'GET_BOOKS',
-    //             payload: books
-    //         };
-    // });
+    return {
+        type: 'GET_BOOKS',
+        payload: request
+    };
 }
 
 export const selectBook = (book) => {

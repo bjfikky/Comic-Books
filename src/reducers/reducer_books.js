@@ -6,9 +6,20 @@ const comicbooks = (state=[] , action) => {
     
     switch (action.type) {
         case 'GET_BOOKS':
-            books = action.payload;
-            console.log("from reducer", books);
-            return books
+            var results = action.payload;
+    
+            for (var i = 0; i < results.length; i++) {
+                var object = results[i];
+                console.log(object.id + ' - ' + object.get('title'));
+                
+                books.push({
+                    id: object.id,
+                    title: object.get("title"),
+                    cover: object.get("cover")
+                })
+            }
+            
+            return books;
         
         case 'BOOKS_SEARCHED':
             let term = action.payload;
