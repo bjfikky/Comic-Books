@@ -1,6 +1,5 @@
-import _ from 'lodash';
 
-var books = [
+let books = [
 
 ];
 
@@ -9,26 +8,22 @@ const comicbooks = (state=[] , action) => {
     switch (action.type) {
         case 'GET_BOOKS':
             
-            var snap = action.payload;
+            state = [];
             
-           snap.forEach( function(childSnap){
-               if (state.indexOf(childSnap.key) === -1) {
-                   state.push({
-                       id: childSnap.key,
-                       title: childSnap.val().title,
-                       cover: childSnap.val().cover
-                   });
-                   console.log(childSnap.val().title);
-               }
-               
-               
-           });
-           
-           state = [...state];
-           
-          state =  _.uniqBy(state, 'id');
-           
-           return state;
+            books = action.payload;
+            
+            books.forEach(book => {
+                console.log(book.id);
+                state.push({
+                    id: book.data().title,
+                    cover: book.data().cover,
+                    title: book.data().title
+                })
+            });
+            
+            books = state;
+            
+            return state;
         
         case 'BOOKS_SEARCHED':
             let term = action.payload;
@@ -43,10 +38,9 @@ const comicbooks = (state=[] , action) => {
             
             return searchedBooks;
             
-            
         default: return state;
     }
     
-}
+};
 
 export default comicbooks;

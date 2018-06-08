@@ -16,7 +16,13 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 class App extends Component {
     componentWillMount() {
         firebase.initializeApp(config);
+        const firestore = firebase.firestore()
+        
+        const settings = {timestampsInSnapshots: true};
+        firestore.settings(settings);
     }
+    
+    
     render() {
         return (
             <div>

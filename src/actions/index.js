@@ -1,20 +1,23 @@
-import Parse from 'parse';
-
 import firebase from 'firebase';
-
-
-
 
 
 export const getBooks = () => {
     
-    var booksRef = firebase.database().ref().child('books');
+    let database = firebase.firestore();
+
+    let booksRef = database.collection("books");
+
+    // let booksQuery = booksRef.get().then(products => {
+    //     products.forEach(doc => {
+    //         console.log(doc.data());
+    //     });
+    // });
     
-    let books = booksRef.ref.once('value');
-    
+    let booksQuery = booksRef.get();
+
     return {
         type: 'GET_BOOKS',
-        payload: books
+        payload: booksQuery
     };
 }
 
@@ -34,9 +37,11 @@ export const searchBooks = (term) => {
 
 export const addBook = (values) => {
     
-    var booksRef = firebase.database().ref().child('books');
+    let database = firebase.firestore();
     
-    let addbook = booksRef.push().set({
+    let booksRef = database.collection("books");
+    
+    let addbook = booksRef.add({
         title: 'Punisher',
         cover: 'images/punisher.jpg'
     });
