@@ -35,22 +35,34 @@ export const searchBooks = (term) => {
     }
 }
 
-export const addBook = (values) => {
+export const addBook = (values, image ,callback) => {
     
     let database = firebase.firestore();
     
+    let storage = firebase.storage();
+    
     let booksRef = database.collection("books");
     
-    let addbook = booksRef.add({
-        title: 'Punisher',
-        cover: 'images/punisher.jpg'
-    });
+    let imageName = image.name.replace(/\s+/g, "-").toLowerCase();
+    
+    imageName = imageName + Date.now();
+    
+    let imageRef = storage.ref().child(imageName);
+    
+    console.log(image);
+    
+    imageRef.put(image);
+    
+    let addBook = booksRef.add({
+        title: values.title,
+        cover: `https://firebasestorage.googleapis.com/v0/b/comic-book-8ad1f.appspot.com/o/${imageName}?alt=media`
+    }).then(() => callback());
     
     console.log("Add book");
     
     return {
         type: 'ADD_BOOK',
-        payload: addbook
+        payload: addBook
     }
 }
 

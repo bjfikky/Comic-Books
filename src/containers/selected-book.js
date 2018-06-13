@@ -11,7 +11,7 @@ class SelectedBook extends Component {
         return (
             <div className="selected-book col-md-8">
                 <h3>{this.props.selectedBook.title}</h3>
-                <img src={"http://localhost:3000/" + this.props.selectedBook.cover} alt="comic book" />
+                <img src={this.props.selectedBook.cover} alt="comic book" />
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores ipsam magnam odit officia quam rem veniam
                     voluptas voluptatum? Asperiores consequatur cumque eum ex magnam molestias nulla odio perferendis rerum sed?
                 </p>

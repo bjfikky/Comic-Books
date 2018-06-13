@@ -8,13 +8,17 @@ import { addBook } from "../actions";
 
 class AddBook extends Component {
     
+    state = {
+        image: null
+    }
+    
     render() {
         return (
             <form className="col-md-8 add-new-form" onSubmit={this.props.handleSubmit(this.onSubmit)}>
                 <h3>Add New</h3>
                 <hr/>
                 <Field name="title" label="Title" component={this.renderTextField}/>
-                
+                <input type="file" accept="image/*" onChange={this.imageSelect}/>
                 <Field name="body" label="Body"  component={this.renderTextarea}/>
                 <input type="submit" className="btn btn-outline-success" value="Add Book"/>
                 <Link to="/"><button className="btn btn-outline-secondary cancel-button">Cancel</button></Link>
@@ -48,17 +52,25 @@ class AddBook extends Component {
     }
     
     
-    
+    imageSelect = (event) => {
+        console.log(event.target.files[0].name);
+        this.setState({
+            image: event.target.files[0]
+        })
+    }
     
     
     onSubmit = (values) => {
         // var coverName = (this.state.selectedFile).name;
         // coverName = coverName.replace(/\s+/g, "-").toLowerCase();
     
-        if (this.props.addBook(values)) {
-            this.props.history.push("/")
-        }
-        
+        // if (this.props.addBook(values)) {
+        //     this.props.history.push("/")
+        // }
+    
+        this.props.addBook(values, this.state.image ,() => {
+            this.props.history.push("/");
+        });
         
     }
 }
