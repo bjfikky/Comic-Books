@@ -18,7 +18,12 @@ class AddBook extends Component {
                 <h3>Add New</h3>
                 <hr/>
                 <Field name="title" label="Title" component={this.renderTextField}/>
-                <input type="file" accept="image/*" onChange={this.imageSelect}/>
+                
+                <div className="form-group">
+                    <label>Select Cover Image :</label>
+                    <input className="form-control" type="file" accept="image/*" onChange={this.imageSelect}/>
+                </div>
+                
                 <Field name="body" label="Body"  component={this.renderTextarea}/>
                 <input type="submit" className="btn btn-outline-success" value="Add Book"/>
                 <Link to="/"><button className="btn btn-outline-secondary cancel-button">Cancel</button></Link>
@@ -32,13 +37,10 @@ class AddBook extends Component {
             <div className="form-group">
                 <label htmlFor={field.name}>{field.label} :</label>
                 <input className="form-control" type="text" {...field.input} />
-                <div className="text-danger">{field.meta.error}</div>
+                {this.renderError(field)}
             </div>
         );
     }
-    
-    
-    
     
     
     renderTextarea = (field) => {
@@ -46,9 +48,16 @@ class AddBook extends Component {
             <div className="form-group">
                 <label htmlFor={field.name}>{field.label} :</label>
                 <textarea className="form-control" rows="15" {...field.input}></textarea>
-                <div className="text-danger">{field.meta.error}</div>
+                {this.renderError(field)}
             </div>
         );
+    }
+    
+    
+    renderError = (field) => {
+        if (field.meta.touched && field.meta.error) {
+            return <div className="text-danger">{field.meta.error}</div>;
+        }
     }
     
     

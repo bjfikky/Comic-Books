@@ -32,7 +32,7 @@ class App extends Component {
                         <div className="App container">
                             <Switch>
                                 <Route path="/add" component={AddNew}/>
-                                <Route path="/read" component={Read}/>
+                                <Route path="/:id" component={Read}/>
                                 <Route path="/" component={BooksPage}/>
                             </Switch>
                         </div>
