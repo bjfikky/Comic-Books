@@ -15,7 +15,7 @@ const comicbooks = (state=[] , action) => {
             books.forEach(book => {
                 console.log(book.id);
                 state.push({
-                    id: book.data().title,
+                    id: book.id,
                     cover: book.data().cover,
                     title: book.data().title
                 })

@@ -7,9 +7,10 @@ import config from './config/config';
 
 import BookList from './containers/book-list';
 import SearchBar from './containers/search-bar';
-import Navbar from './components/navbar'
-import AddNew from './containers/add-book'
-import SelectedBook from './containers/selected-book'
+import Navbar from './components/navbar';
+import AddNew from './containers/add-book';
+import SelectedBook from './containers/selected-book';
+import ShowBook from './containers/show-book';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
@@ -31,8 +32,8 @@ class App extends Component {
                         <Navbar/>
                         <div className="App container">
                             <Switch>
-                                <Route path="/add" component={AddNew}/>
-                                <Route path="/:id" component={Read}/>
+                                <Route path="/books/add" component={AddNew}/>
+                                <Route path="/books/:id" component={ShowBook}/>
                                 <Route path="/" component={BooksPage}/>
                             </Switch>
                         </div>
@@ -57,13 +58,6 @@ const BooksPage = () => {
 };
 
 
-const Read = () => {
-    return (
-        <div>
-            <h1>Read</h1>
-        </div>
-    );
-};
 
 
 

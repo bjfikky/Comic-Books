@@ -37,9 +37,15 @@
     margin-bottom: 20px;
 }
 
-.selected-book button {
+#read-button {
     width: 150px;
     float: right;
+    margin-top: 30px;
+}
+
+#delete-button {
+    width: 150px;
+    float: left;
     margin-top: 30px;
 }
 

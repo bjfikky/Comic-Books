@@ -25,7 +25,7 @@ class BookList extends Component {
         
         return (
             <div className="col-md-4">
-                <Link to="/add" className="btn btn-outline-success add-book">Add Book</Link>
+                <Link to="/books/add" className="btn btn-outline-success add-book">Add Book</Link>
                 <div className="list-group">
                     {this.renderList()}
                 </div>

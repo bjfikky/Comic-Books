@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {Link} from "react-router-dom";
 
 class SelectedBook extends Component {
     render() {
@@ -27,8 +28,9 @@ class SelectedBook extends Component {
                     officia, provident repudiandae saepe veniam veritatis.
                     Aperiam aspernatur consequatur culpa delectus ea enim, et iure obcaecati pariatur quibusdam quo voluptatum.
                 </p>
-        
-                <button type="button" className="btn btn-outline-secondary">Read</button>
+    
+                <button id="delete-button" type="button" className="btn btn-outline-danger">Delete</button>
+                <Link to={`/books/${this.props.selectedBook.id}`}><button id="read-button" type="button" className="btn btn-outline-secondary">Read</button></Link>
             </div>
         );
     }

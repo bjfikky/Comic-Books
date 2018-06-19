@@ -35,6 +35,25 @@ export const searchBooks = (term) => {
     }
 }
 
+export const showBook = (bookId) => {
+    
+    let database = firebase.firestore();
+    
+    let storage = firebase.storage();
+    
+    let booksRef = database.collection("books");
+    
+    let bookQuery = booksRef.doc(bookId).get();
+    
+    console.log("showing book");
+    
+    return {
+        type: 'GET_BOOK',
+        payload: bookQuery
+    }
+    
+}
+
 export const addBook = (values, image ,callback) => {
     
     let database = firebase.firestore();
