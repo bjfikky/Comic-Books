@@ -2,8 +2,18 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from "react-router-dom";
 
+import {deleteBook} from '../actions';
+
 class SelectedBook extends Component {
+    constructor(props) {
+        super(props);
+        
+        this.handleDelete = this.handleDelete.bind(this);
+    }
+    
     render() {
+        
+        
         
         if (!this.props.selectedBook) {
             return <p className="lead">... Select a book please ...</p>
@@ -29,12 +39,23 @@ class SelectedBook extends Component {
                     Aperiam aspernatur consequatur culpa delectus ea enim, et iure obcaecati pariatur quibusdam quo voluptatum.
                 </p>
     
-                <button id="delete-button" type="button" className="btn btn-outline-danger">Delete</button>
+                <button onClick={this.handleDelete} id="delete-button" type="button" className="btn btn-outline-danger">Delete</button>
                 <Link to={`/books/${this.props.selectedBook.id}`}><button id="read-button" type="button" className="btn btn-outline-secondary">Read</button></Link>
             </div>
         );
+    
+        
     }
+    
+    handleDelete() {
+        this.props.deleteBook();
+    }
+    
+    
 }
+
+
+
 
 function mapStateToProps(state) {
     return {
@@ -44,4 +65,5 @@ function mapStateToProps(state) {
 
 export default connect(
     mapStateToProps,
+    {deleteBook},
 )(SelectedBook);

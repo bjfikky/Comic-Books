@@ -85,3 +85,12 @@ export const addBook = (values, image ,callback) => {
     }
 }
 
+export const deleteBook = () => {
+    console.log("deleting");
+    
+    return {
+        type: 'DELETE_BOOK',
+        payload: 'test'
+    }
+};
+

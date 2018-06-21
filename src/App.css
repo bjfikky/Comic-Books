@@ -66,3 +66,8 @@
 .cancel-button {
     margin-left: 40px;
 }
+
+.read img {
+    float: left;
+    margin-right: 30px;
+}

@@ -18,7 +18,7 @@ class ShowBook extends Component {
         }
         
         return (
-            <div>
+            <div className="read">
                 <h2>{this.props.book.title}</h2>
                 <img src={this.props.book.cover} alt=""/>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea eius eos illum labore libero maxime
