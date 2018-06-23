@@ -46,10 +46,9 @@ class SelectedBook extends Component {
     
     
     handleDelete() {
-        this.props.deleteBook(this.props.selectedBook.id);
-        this.props.clearSelectedBook();
-        console.log(this.props.selectedBook.id);
-        //TODO: make clearing the selected book a callback function
+        this.props.deleteBook(this.props.selectedBook.id, () => {
+            this.props.clearSelectedBook();
+        });
     }
     
 }

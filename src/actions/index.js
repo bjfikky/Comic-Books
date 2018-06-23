@@ -39,8 +39,6 @@ export const showBook = (bookId) => {
     
     let database = firebase.firestore();
     
-    let storage = firebase.storage();
-    
     let booksRef = database.collection("books");
     
     let bookQuery = booksRef.doc(bookId).get();
@@ -85,15 +83,18 @@ export const addBook = (values, image ,callback) => {
     }
 };
 
-export const deleteBook = (bookId) => {
+export const deleteBook = (bookId, callback) => {
     console.log(bookId);
     
     let database = firebase.firestore();
     
     let booksRef = database.collection("books");
     
+    //TODO: Delete associated image when book is deleted
+    
     
     let booksQuery = booksRef.doc(bookId).delete().then(() => {
+        callback();
         console.log("Book deleted successfully");
 
         return booksRef.get();
