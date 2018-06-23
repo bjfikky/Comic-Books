@@ -16,6 +16,11 @@ const activeBook = (state = null, action) => {
         
             return state;
             
+        case 'CLEAR_BOOK':
+            console.log("clearing");
+            let selectedBook = null;
+            return selectedBook;
+            
             
         default: return state;
     }

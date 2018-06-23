@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from "react-router-dom";
 
-import {deleteBook} from '../actions';
+import {deleteBook, clearSelectedBook} from '../actions';
 
 class SelectedBook extends Component {
     constructor(props) {
@@ -12,8 +12,6 @@ class SelectedBook extends Component {
     }
     
     render() {
-        
-        
         
         if (!this.props.selectedBook) {
             return <p className="lead">... Select a book please ...</p>
@@ -43,18 +41,18 @@ class SelectedBook extends Component {
                 <Link to={`/books/${this.props.selectedBook.id}`}><button id="read-button" type="button" className="btn btn-outline-secondary">Read</button></Link>
             </div>
         );
-    
         
     }
     
+    
     handleDelete() {
-        this.props.deleteBook();
+        this.props.deleteBook(this.props.selectedBook.id);
+        this.props.clearSelectedBook();
+        console.log(this.props.selectedBook.id);
+        //TODO: make clearing the selected book a callback function
     }
     
-    
 }
-
-
 
 
 function mapStateToProps(state) {
@@ -65,5 +63,5 @@ function mapStateToProps(state) {
 
 export default connect(
     mapStateToProps,
-    {deleteBook},
+    {deleteBook, clearSelectedBook},
 )(SelectedBook);

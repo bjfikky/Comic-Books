@@ -83,14 +83,35 @@ export const addBook = (values, image ,callback) => {
         type: 'ADD_BOOK',
         payload: addBook
     }
-}
+};
 
-export const deleteBook = () => {
-    console.log("deleting");
+export const deleteBook = (bookId) => {
+    console.log(bookId);
+    
+    let database = firebase.firestore();
+    
+    let booksRef = database.collection("books");
+    
+    
+    let booksQuery = booksRef.doc(bookId).delete().then(() => {
+        console.log("Book deleted successfully");
+
+        return booksRef.get();
+        
+    });
     
     return {
-        type: 'DELETE_BOOK',
-        payload: 'test'
+        type: 'GET_BOOKS',
+        payload: booksQuery
     }
+    
 };
+
+export const clearSelectedBook = () => {
+
+    return {
+        type: 'CLEAR_BOOK',
+        payload: 'clear'
+    }
+}
 

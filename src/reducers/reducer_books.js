@@ -38,6 +38,10 @@ const comicbooks = (state=[] , action) => {
             
             return searchedBooks;
             
+        // case 'DELETE_BOOK':
+        
+        
+        
         default: return state;
     }
     
