@@ -5,11 +5,6 @@ import {Link} from "react-router-dom";
 import {deleteBook, clearSelectedBook} from '../actions';
 
 class SelectedBook extends Component {
-    constructor(props) {
-        super(props);
-        
-        this.handleDelete = this.handleDelete.bind(this);
-    }
     
     render() {
         
@@ -45,7 +40,7 @@ class SelectedBook extends Component {
     }
     
     
-    handleDelete() {
+    handleDelete = () => {
         this.props.deleteBook(this.props.selectedBook.id, () => {
             this.props.clearSelectedBook();
         });
